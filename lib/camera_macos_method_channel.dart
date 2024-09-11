@@ -281,7 +281,8 @@ class MethodChannelCameraMacOS extends CameraMacOSPlatform {
 
   @override
   Future<void> stopImageStream() async {
-    events?.cancel();
+    await events?.cancel();
+    events = null;
   }
 
   @override
